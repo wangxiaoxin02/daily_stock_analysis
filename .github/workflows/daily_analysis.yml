@@ -10,7 +10,7 @@ on:
     inputs:
       mode:
         description: '运行模式'
-        required: 'true'
+        required: true
         default: 'full'
         type: choice
         options:
@@ -21,11 +21,7 @@ on:
 jobs:
   analyze:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
-     
       - name: Checkout code
         uses: actions/checkout@v4
 
