@@ -25,7 +25,18 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
-      
+     
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ... 其他步骤 ...
+
+      - name: Run Analysis
+        env:
+          TZ: Asia/Shanghai  # 强制容器使用北京时间
+          # 其他已有的 secrets 保持不变
+          # GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python main.py
       - name: 设置 Python 环境
         uses: actions/setup-python@v5
         with:
